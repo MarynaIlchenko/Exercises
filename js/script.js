@@ -26,8 +26,8 @@
 
 // ------------- every, some ------------------------
 // Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
-const arr = [1, 20, 33, 32, 21, 0];
-function biggerThenNull(element, index, array) {
-    return element > 0;
-};
-[1, 20, 33, 32, 21, 0].every(biggerThenNull);
+// const arr = [1, 20, 33, 32, 21, 0];
+// function biggerThenNull(element, index, array) {
+//     return element > 0;
+// };
+// [1, 20, 33, 32, 21, 0].every(biggerThenNull);
