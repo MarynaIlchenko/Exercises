@@ -5,7 +5,7 @@ colorPalette.addEventListener("click", selectColor);
 
 // This is where delegation «magic» happens
 function selectColor(event) {
-  if (event.target.nodeName !== "BUTTON") {
+  if (event.target.nodeName !== "BUTTON") { //Для проверки типа элемента используем свойство nodeName.
     return;
   }
 
