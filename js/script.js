@@ -31,3 +31,6 @@
 //     return element > 0;
 // };
 // [1, 20, 33, 32, 21, 0].every(biggerThenNull);
+
+const date = new Date();
+console.log(date);
