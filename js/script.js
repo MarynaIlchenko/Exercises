@@ -32,39 +32,57 @@
 // };
 // [1, 20, 33, 32, 21, 0].every(biggerThenNull);
 
-const promise = new Promise((resolve, reject) => {
-    // если в const что ниже - true, то выполняется if (canFulfill)
-    const canFulfill = Math.random() > 0.5; 
-    setTimeout(() => {
-        if (canFulfill) {
-        // когда этот if выполняется - вызывается resolve
-        resolve('Промис віполнился успешно с результатом (исполнен, fulfilled)');
-    }
-    reject('Промис выполнился с ошибкой (отклонен, rejected)');
-}, 2000);
-});
-// если промис выполнится успешно, то в result будет передана фраза что стоит в resolve
-promise.then( 
-    result => {
-        console.log(`${result}`);
-    },
-    // а если неуспешно, то выполни эту функцию и в error будет передано то, что записано в reject
-    error => {
-        console.log(`${error}`);
-    },
-);
-// цепочки промисов
-promise
-    .then(result => {
-        console.log(result);
-        return 5;
-    })
-    // в х будет 5ка (то что в возврате предидущего  then)
-    .then(x => {
-        console.log(x);
-        return 10;
-    })
-    // в у будет 10ка
-    .then(y => {
-        console.log(y);
+//-----------------------PROMISES-------------------------
+// const promise = new Promise((resolve, reject) => {
+//     // если в const что ниже - true, то выполняется if (canFulfill)
+//     const canFulfill = Math.random() > 0.5; 
+//     setTimeout(() => {
+//         if (canFulfill) {
+//         // когда этот if выполняется - вызывается resolve
+//         resolve('Промис віполнился успешно с результатом (исполнен, fulfilled)');
+//     }
+//     reject('Промис выполнился с ошибкой (отклонен, rejected)');
+// }, 2000);
+// });
+// // если промис выполнится успешно, то в result будет передана фраза что стоит в resolve
+// promise.then( 
+//     result => {
+//         console.log(`${result}`);
+//     },
+//     // а если неуспешно, то выполни эту функцию и в error будет передано то, что записано в reject
+//     error => {
+//         console.log(`${error}`);
+//     },
+// );
+// // цепочки промисов
+// promise
+//     .then(result => {
+//         console.log(result);
+//         return 5;
+//     })
+//     // в х будет 5ка (то что в возврате предидущего  then)
+//     .then(x => {
+//         console.log(x);
+//         return 10;
+//     })
+//     // в у будет 10ка
+//     .then(y => {
+//         console.log(y);
+//     });
+
+const makeOrder = dish => {
+    const DELAY = 1000;
+    const promise = new Promise((resolve, reject) => {
+        const passed = Math.random() > 0.5;
+        setTimeout(() => {
+            if (passed) {
+                resolve('your dish');
+            }
+            reject('food is off');
+        }, DELAY);
     });
+    return promise;
+};
+    
+const p = makeOrder('donut');
+console.log(p);

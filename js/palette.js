@@ -20,7 +20,7 @@ createPaletteItems();
 function createPaletteItems() {
   const items = [];
   for (let i = 0; i < 60; i++) {
-    const color = getRangomColor();
+    const color = getRandomColor();
     const item = document.createElement("button");
     item.type = "button";
     item.dataset.color = color;
