@@ -35,7 +35,7 @@
 //-----------------------PROMISES-------------------------
 // const promise = new Promise((resolve, reject) => {
 //     // если в const что ниже - true, то выполняется if (canFulfill)
-//     const canFulfill = Math.random() > 0.5; 
+//     const canFulfill = Math.random() > 0.5;
 //     setTimeout(() => {
 //         if (canFulfill) {
 //         // когда этот if выполняется - вызывается resolve
@@ -45,7 +45,7 @@
 // }, 2000);
 // });
 // // если промис выполнится успешно, то в result будет передана фраза что стоит в resolve
-// promise.then( 
+// promise.then(
 //     result => {
 //         console.log(`${result}`);
 //     },
@@ -70,19 +70,60 @@
 //         console.log(y);
 //     });
 
-const makeOrder = dish => {
-    const DELAY = 1000;
-    const promise = new Promise((resolve, reject) => {
-        const passed = Math.random() > 0.5;
-        setTimeout(() => {
-            if (passed) {
-                resolve('your dish');
-            }
-            reject('food is off');
-        }, DELAY);
-    });
-    return promise;
-};
-    
-const p = makeOrder('donut');
-console.log(p);
+// const makeOrder = dish => {
+//     const DELAY = 1000;
+//     const promise = new Promise((resolve, reject) => {
+//         const passed = Math.random() > 0.5;
+//         setTimeout(() => {
+//             if (passed) {
+//                 resolve('your dish');
+//             }
+//             reject('food is off');
+//         }, DELAY);
+//     });
+//     return promise;
+// };
+
+// const p = makeOrder('donut');
+// console.log(p);
+
+// const x = 1
+// const x = 'hello!'
+// console.log(x)
+
+// let b = 20
+// if (true) {
+//     console.log(b)
+//     let b = 10
+// }
+
+// const x;
+// x = 1;
+// console.log(x);
+// let a = 1
+// const b = 'pro'
+// if (b === 'free') {
+//     a = 10
+// } else if (b === 'pro') {
+//     a = 5
+// } else {
+//     a = 2
+// }
+// console.log(a)
+
+// let type
+// const age = 20
+// const type = age >= 18 ? 'adult' : 'child'
+// console.log(type)
+
+// if (age >= 18) {
+//     type = 'adult'
+// } else {
+//     type = 'child'
+// }
+// console.log(type)
+
+const num1 = 5
+const num2 = 10
+const biggerNumber = num1 > num2 ? num1 : num2
+console.log(biggerNumber)
